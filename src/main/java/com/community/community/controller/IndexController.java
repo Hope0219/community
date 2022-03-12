@@ -6,12 +6,12 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 
 @Controller   //把这个类当作spring的bean来管理，同时接收前端的请求
-public class HelloController {
+public class IndexController {
 
-    @GetMapping  //=@RequestMapping(method = RequestMethod.GET)
+    @GetMapping ("/")//=@RequestMapping(method = RequestMethod.GET)
                     //@PostMapping=@RequestMapping(method = RequestMethod.POST)
-    public String hello(@RequestParam(name= "name")String name, Model model){
-       model.addAttribute("name",name);
+    public String index(){
+
        return "index";
     }
 }
